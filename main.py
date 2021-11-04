@@ -17,7 +17,7 @@ if __name__ == '__main__':
     print(X)
 
     kde = KernelDensity(kernel='gaussian', bandwidth=1).fit(X)
-    X_plot = np.linspace(1,len(prices)+1)
+    X_plot = np.linspace(min(prices),max(prices))
     log_dens = kde.score_samples(X_plot.reshape((-1,1)))
     print(log_dens)
     plt.plot(X_plot, [10**x for x in log_dens])
