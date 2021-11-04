@@ -5,8 +5,9 @@ import json
 
 def confidence_interval(data, alpha=0.25):
     srt = sorted(data)
-    lower = srt[int((0.5-alpha)*len(srt))]
-    upper = srt[int((0.5+alpha)*len(srt))]
+    print(srt[len(srt)//2])
+    lower = srt[int((0.5-(1-alpha))*len(srt))]
+    upper = srt[int((0.5+(1-alpha))*len(srt))]
     return lower, upper
 
 if __name__ == '__main__':
